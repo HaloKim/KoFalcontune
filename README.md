@@ -1,3 +1,8 @@
+# Kofalcontune
+
+<details>
+<summary>Origin Git</summary>
+
 # falcontune: 4-Bit Finetuning of FALCONs on a Consumer GPU
 
 **falcontune** allows finetuning FALCONs (e.g., falcon-40b-4bit) on as little as one consumer-grade A100 40GB. 

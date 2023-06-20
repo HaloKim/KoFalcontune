@@ -167,7 +167,8 @@ class TrainSAD(TrainDataBase):
     def generate_prompt(self, data_point, **kwargs):
         return make_prompt(
             data_point["instruction"],
-            data_point["input"],
+            # data_point["input"],
+            None,
             data_point["output"]
         )
 

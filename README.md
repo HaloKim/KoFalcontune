@@ -17,6 +17,7 @@ LLM Sota를 갱신한 Falcon을 한국어에 Finetune 할 수 있도록 자료�
 # ENV
 
 ```
+Ubuntu Kuebeflow
 A100 80G
 ```
 

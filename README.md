@@ -76,6 +76,13 @@ with torch.no_grad():
 그리고 청소기를 사용하는 방법은 다음과 �
 ```
 
+# wandb 
+
+학습은 10000 step을 진행했습니다.
+
+![image](https://github.com/HaloKim/KoFalcontune/assets/44603549/4041d170-2ae4-4bef-aa28-0dc68101c24a)
+
+
 <details>
 <summary>Origin Git</summary>
 

@@ -23,7 +23,7 @@ A100 80G
 
 # Fintune Info & Compare Before/After 
 
-40B 보다 Koalpaca Dataset으로 Fintune 한 경량 7B 모델이 훨씬 좋은 품질을 얻는 것을 확인 할 수 있습니다.
+40B 보다 Koalpaca Dataset으로 Fintune 한 경량 7B 모델이 완성에 가까운 데이터를 얻는 것을 확인 할 수 있습니다.
 
 ## Data
 

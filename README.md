@@ -27,7 +27,11 @@ A100 80G
 
 [KoAlpaca-v1.1](https://huggingface.co/datasets/beomi/KoAlpaca-v1.1a/viewer/beomi--KoAlpaca-v1.1a)
 
-**Model** : ybelkada/falcon-7b-sharded-bf16
+**Origin Model** : ybelkada/falcon-7b-sharded-bf16
+
+학습이 완료된 모델을 공유합니다.
+
+[Koalpaca Fientune Model](https://huggingface.co/dev7halo/falcon-7b-sharded-bf16-KoAlpaca)
 
 ```python
 inputs = tokenizer("광해군은 폭군이었나요 ?", return_tensors="pt")

@@ -23,6 +23,8 @@ A100 80G
 
 # Fintune Info & Before After Compare.
 
+40B 보다 Koalpaca Dataset으로 Fintune 한 경량 7B 모델이 훨씬 좋은 품질을 얻는 것을 확인 할 수 있습니다.
+
 ## Data
 
 [KoAlpaca-v1.1](https://huggingface.co/datasets/beomi/KoAlpaca-v1.1a/viewer/beomi--KoAlpaca-v1.1a)
@@ -73,7 +75,6 @@ with torch.no_grad():
 
 그리고 청소기를 사용하는 방법은 다음과 �
 ```
-
 
 <details>
 <summary>Origin Git</summary>

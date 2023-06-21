@@ -1,5 +1,79 @@
 # KoFalcontune
 
+LLM Sota를 갱신한 Falcon을 한국어에 Finetune 할 수 있도록 자료를 공유합니다.
+
+[Faclon](https://huggingface.co/blog/falcon)
+
+|Model|License|Commercial use?|Pretraining length [tokens]|Pretraining compute [PF-days]|Leaderboard score|K,V-cache size for a 2.048 context|
+|:----|:----|:----|:----|:----|:----|:----|
+|StableLM-Alpha-7B|CC-BY-SA-4.0|✅|1,500B|700|38.3*|800MB|
+|LLaMA-7B|LLaMA license|❌|1,000B|500|47.6|1,100MB|
+|MPT-7B|Apache 2.0|✅|1,000B|500|48.6|1,100MB|
+|Falcon-7B|Apache 2.0|✅|1,500B|700|48.8|20MB|
+|LLaMA-33B|LLaMA license|❌|1,500B|3200|56.9|3,300MB|
+|LLaMA-65B|LLaMA license|❌|1,500B|6300|58.3|5,400MB|
+|Falcon-40B|Apache 2.0|✅|1,000B|2800|60.4|240MB|
+
+# ENV
+
+```
+A100 80G
+```
+
+# Fintune Info & Before After Compare.
+
+## Data
+
+[KoAlpaca-v1.1](https://huggingface.co/datasets/beomi/KoAlpaca-v1.1a/viewer/beomi--KoAlpaca-v1.1a)
+
+## Before
+
+Model : Big Falcon Model (40 billion parameters!)
+
+![image](https://github.com/HaloKim/KoFalcontune/assets/44603549/0fb0e7b8-1c43-4417-87a0-63821cc6af66)
+
+
+## After
+
+Model : ybelkada/falcon-7b-sharded-bf16
+
+```python
+inputs = tokenizer("광해군은 폭군이었나요 ?", return_tensors="pt")
+
+with torch.no_grad():
+    outputs = model.generate(input_ids=inputs["input_ids"].to("cuda"), max_new_tokens=512)
+    print(tokenizer.batch_decode(outputs.detach().cpu().numpy(), skip_special_tokens=True)[0])
+
+# output
+
+광해군은 폭군이었나요?
+광해군은 조선시대에 수많은 외교군들이었습니다. 
+그 중에서도 가장 유명한 것은 폭군으로, 그들은 외교정책을 선포하고 신라의 지배를 부담하는 전략을 담당했습니다. 
+그러나 광해군은 폭군이지만, 계보형의 외교도 많이 하고 있었습니다. 
+그들은 외교문화의 중요성을 인식하고 있었기 때문입니다. 
+이들은 외교문화에 맞서 전승전쟁을 전개하였으며, 이란에서 벌였던 외교군의 위업을 대신했습니다. 
+그러나 이들은 외교문화에 �    
+```
+
+```python
+inputs = tokenizer("기계식 키보드 청소방법", return_tensors="pt")
+
+with torch.no_grad():
+    outputs = model.generate(input_ids=inputs["input_ids"].to("cuda"), max_new_tokens=512)
+    print(tokenizer.batch_decode(outputs.detach().cpu().numpy(), skip_special_tokens=True)[0])
+
+# output
+
+기계식 키보드 청소방법은 다음과 같습니다. 
+1. 먼저, 키보드에 접착된 물은 무조건 닦아줘야 합니다.
+2. 그리고 키보드에 묻은 이쑤시개가 있는 경우, 먼저 진공접근으로 녹인 후 스프레이를 제거합니다.
+3. 스프레이를 제거하면 더 깨끗해진다면, 청소기를 사용하는 것이 좋습니다. 청소기를 사용하면 일반적으로 키보드를 청소할 수 있습니다.
+4. 마지막으로, 키보드를 뒤집어서 공기가 남지 않게 보충합니다.
+
+그리고 청소기를 사용하는 방법은 다음과 �
+```
+
+
 <details>
 <summary>Origin Git</summary>
 

@@ -23,20 +23,9 @@ A100 80G
 
 # Fintune Info
 
-40B 보다 Koalpaca Dataset으로 Fintune 한 경량 7B 모델이 완성에 가까운 데이터를 얻는 것을 확인 할 수 있습니다.
-
 ## Data
 
 [KoAlpaca-v1.1](https://huggingface.co/datasets/beomi/KoAlpaca-v1.1a/viewer/beomi--KoAlpaca-v1.1a)
-
-## Before
-
-**Model** : Big Falcon Model (40 billion parameters!)
-
-![image](https://github.com/HaloKim/KoFalcontune/assets/44603549/0fb0e7b8-1c43-4417-87a0-63821cc6af66)
-
-
-## After
 
 **Model** : ybelkada/falcon-7b-sharded-bf16
 

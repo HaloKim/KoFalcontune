@@ -21,7 +21,7 @@ Ubuntu Kuebeflow
 A100 80G
 ```
 
-# Fintune Info
+# Finetune Info
 
 ## Data
 

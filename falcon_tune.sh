@@ -1,8 +1,9 @@
-pip install --no-deps -r requirements.txt
+# pip install --no-deps -r requirements.txt
+pip install -r requirements.txt
 python setup.py install
 
 # urllib3 에러 발생시
-pip install 'urllib3<2'
+# pip install 'urllib3<2'
 
 falcontune finetune \
     --model=falcon-7b-instruct \

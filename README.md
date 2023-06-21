@@ -29,14 +29,14 @@ A100 80G
 
 ## Before
 
-Model : Big Falcon Model (40 billion parameters!)
+**Model** : Big Falcon Model (40 billion parameters!)
 
 ![image](https://github.com/HaloKim/KoFalcontune/assets/44603549/0fb0e7b8-1c43-4417-87a0-63821cc6af66)
 
 
 ## After
 
-Model : ybelkada/falcon-7b-sharded-bf16
+**Model** : ybelkada/falcon-7b-sharded-bf16
 
 ```python
 inputs = tokenizer("광해군은 폭군이었나요 ?", return_tensors="pt")
